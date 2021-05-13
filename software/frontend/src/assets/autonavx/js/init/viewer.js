@@ -60,7 +60,8 @@ define(["jquery", "THREE", "THREE/TrackballControls", "THREE/ColladaLoader"], fu
 			}
 			window.addEventListener('message', handleResponse, false)
 
-			window.parent.postMessage({source: 'drone simulator', message: 'drone loaded'}, "*")
+			window.parent.postMessage({source: 'drone simulator', message: 'drone loaded'}, "https://dronecontrol.netlify.app/")
+			window.parent.postMessage({source: 'drone simulator', message: 'drone loaded'}, "https://dronecontrol.connorc.uk/")
 
 			drone = new THREE.Object3D();
 			drone.add(createAxis())

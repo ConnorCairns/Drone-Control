@@ -2,7 +2,7 @@ import React from 'react';
 import './about.css'
 import info from '../../assets/img/info.svg'
 
-const Card = ({ message, link }) => {
+const Card = ({ message, link, linkName }) => {
     return (
         <div className="w-full">
         <div className="w-full">
@@ -11,7 +11,7 @@ const Card = ({ message, link }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
                 {link ? 
-                    <span>{message} <a href="https://jsturm.de/wp/teaching/autonavx-slides/">AUTONAVx</a></span>
+                    <span>{message} <a href={link} className="font-bold">{linkName}</a></span>
                     :
                 <span>{message}</span>
                 } 
@@ -34,9 +34,10 @@ const About = () => {
 
                         <div className="mt-16">
                             <h1 className="font-bold text-center text-3xl text-gray-900 mb-5">about</h1>
-                            <Card message={"Made by University of Bristol students"} />
-                            <Card message={"Drone simulator provided by"} link={true} />
-                            <Card message={"Program data is stored in local storage, no tracking information is ever stored and no data ever reaches our servers"} />
+                            <Card message="Made by University of Bristol students" />
+                            <Card message="Drone Control is open source and the source code can be found" link="https://github.com/ConnorCairns/Drone-Control" linkName="here" />
+                            <Card message="Drone simulator provided by" link="https://jsturm.de/wp/teaching/autonavx-slides/" linkName="AUTONAVx" />
+                            <Card message="Program data is stored in local storage, no tracking information is ever stored and no data ever reaches our servers" />
                         </div>
                     </div>
 
